@@ -15,6 +15,8 @@ env.key_filename = '~/.ssh/school'
 def do_deploy(archive_path):
     """
     Distributes an archive to the web servers and deploys it
+    execute: fab -f 2-do_deploy_web_static.py
+    do_deploy:archive_path=versions/web_static_20240203103808.tgz
     """
     if not exists(archive_path):
         return False
