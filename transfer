@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Check if the number of parameters is less than 4
+if [ "$#" -lt 2 ]; then
+    echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+    exit 1
+fi
+
+# Assign parameters to variables
+FILE_PATH="$1"
+SERVER_IP="$2"
+USERNAME="ubuntu"
+SSH_KEY_PATH=" ~/.ssh/school"
+
+# Disable strict host key checking for scp
+SCP_OPTIONS="-o StrictHostKeyChecking=no"
+
+# Transfer the file to the user's home directory on the server
+scp $SCP_OPTIONS -i "$SSH_KEY_PATH" "$FILE_PATH" "$USERNAME@$SERVER_IP":~/
