@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # A Bash script that sets up web servers for the deployment of web_static
 
 # Install Nginx if not already installed
@@ -34,6 +34,3 @@ sudo sed -i '/\blocation \/ {/a\
 
 # Restart Nginx
 sudo service nginx restart
-
-# Exit successfully
-exit 0
