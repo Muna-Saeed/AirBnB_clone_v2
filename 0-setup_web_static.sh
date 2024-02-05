@@ -34,3 +34,6 @@ sudo sed -i '/\blocation \/ {/a\
 
 # Restart Nginx
 sudo service nginx restart
+
+# Exit successfully
+exit 0
