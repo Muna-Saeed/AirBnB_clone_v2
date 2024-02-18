@@ -1,0 +1,59 @@
+{% extends '8-index.html' %}
+
+{% block title %}
+    <title>HBNB - Airbnb Clone</title>
+{% endblock %}
+
+{% block filters %}
+    <div class="container">
+        <section class="filters">
+            <h3 class="title">States</h3>
+            <div class="popover">
+                &nbsp;
+            </div>
+            <h3 class="title">Cities</h3>
+            <div class="popover">
+                &nbsp;
+            </div>
+            <h3 class="title">Amenities</h3>
+            <div class="popover">
+                &nbsp;
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block places %}
+    <div class="container">
+        <section class="places">
+            {% for place in places %}
+                <article>
+                    <div class="title">
+                        <h2>{{ place.name }}</h2>
+                        <div class="price_by_night">${{ place.price_by_night }}</div>
+                    </div>
+                    <div class="information">
+                        <div class="max_guest">
+                            <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                            <br />
+                            {{ place.max_guest }} Guests
+                        </div>
+                        <div class="number_rooms">
+                            <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+                            <br />
+                            {{ place.number_rooms }} Bedrooms
+                        </div>
+                        <div class="number_bathrooms">
+                            <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+                            <br />
+                            {{ place.number_bathrooms }} Bathroom
+                        </div>
+                    </div>
+                    <div class="user">
+                        <strong>Owner: {{ place.user.first_name }} {{ place.user.last_name }}</strong>
+                    </div>
+                </article>
+            {% endfor %}
+        </section>
+    </div>
+{% endblock %}
