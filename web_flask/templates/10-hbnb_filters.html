@@ -1,0 +1,39 @@
+{% extends '6-index.html' %}
+
+{% block title %}
+    <title>HBNB - Filters</title>
+{% endblock %}
+
+{% block filters %}
+    <div class="container">
+        <section class="filters">
+            <h3 class="title">States</h3>
+            <div class="popover">
+                {% for state in states %}
+                    <div class="col-md-4">
+                        <input type="checkbox" name="state" id="{{ state.id }}" />
+                        <label for="{{ state.id }}">{{ state.name }}</label>
+                    </div>
+                {% endfor %}
+            </div>
+            <h3 class="title">Cities</h3>
+            <div class="popover">
+                {% for city in cities %}
+                    <div class="col-md-4">
+                        <input type="checkbox" name="city" id="{{ city.id }}" />
+                        <label for="{{ city.id }}">{{ city.name }}</label>
+                    </div>
+                {% endfor %}
+            </div>
+            <h3 class="title">Amenities</h3>
+            <div class="popover">
+                {% for amenity in amenities %}
+                    <div class="col-md-4">
+                        <input type="checkbox" name="amenity" id="{{ amenity.id }}" />
+                        <label for="{{ amenity.id }}">{{ amenity.name }}</label>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+{% endblock %}
